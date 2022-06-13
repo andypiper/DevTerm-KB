@@ -31,5 +31,12 @@ PICO-8 no version for RISC-V
 - also, unable to install libsdl2 at the moment.
 
 
-Disable u-boot update for kernel upgrades
-FWIW, /boot/exlinux/extlinux.conf is updated by u-boot-update. It looks like you can turn off automatic updating by adding U_BOOT_UPDATE=false to /etc/default/u-boot.
+
+
+
+
+
+
+to take screenshot
+
+xwd -root -display :0 | convert xwd:- jpg:- > file.jpg

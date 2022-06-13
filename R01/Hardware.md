@@ -195,10 +195,11 @@ Fn+<> brightness
 
 Fn+Vol = Vol up
 
+### update keyboard firmware 
+
 `dfu-util -d 1EAF:0003 -a 2 -D devterm_keyboard.ino.bin` 
 There are DIP switches on the base, switch DIP 2 to be seen by computer
 UART on one side of keyboard.
-
 
 
 
