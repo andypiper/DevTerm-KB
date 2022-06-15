@@ -1,13 +1,17 @@
 
 
-Fn+<> - screen brightness
+- how to upgrade (software)
+  - switch back to Jammy repos to avoid confusing apt with Kinetic
+  - remove broken packages
+  - clean, update, slowly update packages
 
-
-- how to upgrade
 - how to manage fan
   - modify Rpi fan control for different temperature tooling 
+
 - how to manage printer
+
 - cores on CPU
+
 - why is default config in a zip?
 - 
 
@@ -44,7 +48,12 @@ to take screenshot
 
 hardware access macros (zsh)
 ```
-function temp() {
+function battery() {
+	(( chrg = $((`cat /sys/class/power_supply/axp20x-battery/capacity`)) ))
+	echo $chrg%
+}
+
+function cputemp() {
 	(( temp = $((`cat /sys/class/thermal/thermal_zone0/temp` / 1000)) ))
 	echo $temp C
 }

@@ -254,7 +254,19 @@ dmesg:
 ```
 
 
-## 3D prints
+## Printer module
+
+Needs user to be added to lp and lpadmin groups
+
+Ideally needs some wrapper scripts or an app to actually send text and images to the printer.
+
+Default text is large and not very helpful for keeping text files on paper.
+
+
+
+## Addons
+
+### 3D prints
 
 https://www.tinkercad.com/things/iB2n0KXmySi
 

@@ -5,7 +5,10 @@ sudo sed -i 's/devel/jammy/g' /etc/apt/sources.list
 ## Remove update notifier
 sudo apt purge update-notifier common
 
-sudo apt purge gimp inkscape freedoom chocolate-doom colord motd-news-config gnome-terminal
+
+## Remove pointless things
+sudo apt purge gimp inkscape freedoom chocolate-doom colord motd-news-config gnome-terminal devterm-fan-temp-daemon-rpi snapd 
+
 
 ## Disable u-boot update for kernel upgrades
 FWIW, /boot/exlinux/extlinux.conf is updated by u-boot-update. It looks like you can turn off automatic updating by adding `U_BOOT_UPDATE=false` to `/etc/default/u-boot`.
