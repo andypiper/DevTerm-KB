@@ -8,10 +8,12 @@ This is not intended to be a replacement for the product wiki, just things I'm l
 
 ## Useful links
 
-- [Clockwork Pi DevTerm forums](https://forum.clockworkpi.com/c/devterm/28)
-- [Clockwork Pi wiki](https://wiki.clockworkpi.com/index.php/Main_Page#DevTerm)
-- [r/ClockworkPi subreddit](https://reddit.com/r/ClockworkPi/)
-- [`devterm` content on Twitter](https://twitter.com/search?q=devterm&f=live)
+* [Clockwork Pi DevTerm forums](https://forum.clockworkpi.com/c/devterm/28)
+* Clockwork Pi wikis (why two?)
+  * [DevTerm on wiki.clockworkpi.com](https://wiki.clockworkpi.com/index.php/Main_Page#DevTerm)
+  * [DevTerm GitHub repo wiki](https://github.com/clockworkpi/DevTerm/wiki)
+* [r/ClockworkPi subreddit](https://reddit.com/r/ClockworkPi/)
+* [`devterm` content on Twitter](https://twitter.com/search?q=devterm&f=live)
 
 ## Contributing
 
