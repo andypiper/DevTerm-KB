@@ -1,6 +1,6 @@
 # DevTerm Knowledge Base
 
-![DevTerm-KB](https://socialify.git.ci/andypiper/DevTerm-KB/image?description=1&font=KoHo&logo=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F35560767%3Fs%3D200%26v%3D4&name=1&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Dark)
+![DevTerm-KB](https://socialify.git.ci/andypiper/DevTerm-KB/image?description=1&font=KoHo&logo=https%3A%2F%2Fgithub.com%2Fandypiper%2FDevTerm-KB%2Fblob%2Fmain%2Fdevterm-icon.png%3Fraw%3Dtrue&name=1&owner=1&pattern=Floating%20Cogs&theme=Dark)
 
 A collection of notes, scripts and other information about the [Clockwork Pi DevTerm](https://www.clockworkpi.com/devterm).
 
