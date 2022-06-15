@@ -184,6 +184,22 @@ atime mounted=2022-03-18 16:12:23 state=mounted
        logical name: /dev/input/event5
 ```
 
+
+
+```text
+cpi@devterm-R01:~$ ls /dev
+block		 fd	      initctl	 mmcblk0p4  ptyp5  ptype      spidev1.0       tty0   tty17  tty25  tty33  tty41  tty5	tty58  tty9   ttyp6  ttypf     vcs6   vcsu1
+bus		 full	      input	 null	    ptyp6  ptypf      stderr	      tty1   tty18  tty26  tty34  tty42  tty50	tty59  ttyS0  ttyp7  ubi_ctrl  vcsa   vcsu2
+cedar_dev	 fuse	      ion	 ptmx	    ptyp7  random     stdin	      tty10  tty19  tty27  tty35  tty43  tty51	tty6   ttyS1  ttyp8  urandom   vcsa1  vcsu3
+char		 g2d	      kmsg	 pts	    ptyp8  rfkill     stdout	      tty11  tty2   tty28  tty36  tty44  tty52	tty60  ttyp0  ttyp9  vcs       vcsa2  vcsu4
+console		 gpiochip0    log	 ptyp0	    ptyp9  rpaf-dsp0  sunxi-reg       tty12  tty20  tty29  tty37  tty45  tty53	tty61  ttyp1  ttypa  vcs1      vcsa3  vcsu5
+cpu_dma_latency  hdmi	      mem	 ptyp1	    ptypa  rtc	      sunxi-wlan      tty13  tty21  tty3   tty38  tty46  tty54	tty62  ttyp2  ttypb  vcs2      vcsa4  vcsu6
+disk		 i2c-0	      mmcblk0	 ptyp2	    ptypb  rtc0       sunxi_pwm0      tty14  tty22  tty30  tty39  tty47  tty55	tty63  ttyp3  ttypc  vcs3      vcsa5  watchdog
+disp		 iio:device0  mmcblk0p2  ptyp3	    ptypc  shm	      sunxi_soc_info  tty15  tty23  tty31  tty4   tty48  tty56	tty7   ttyp4  ttypd  vcs4      vcsa6  watchdog0
+fb0		 iio:device1  mmcblk0p3  ptyp4	    ptypd  snd	      tty	      tty16  tty24  tty32  tty40  tty49  tty57	tty8   ttyp5  ttype  vcs5      vcsu   zero
+```
+
+
 Issue with display ribbon cable
 
 
@@ -203,8 +219,42 @@ UART on one side of keyboard.
 
 
 
+## GPIO access
 
-### 3D prints
+may need udev rule + setuid tools / group?
+
+
+## sound
+
+
+## video out
+
+Failing.
+
+dmesg:
+
+```
+[    0.199831] [DISP]disp_module_init
+[    0.200403] disp 5000000.disp: Adding to iommu group 0
+[    0.239946] [DISP] disp_init_hdmi,line:1047:
+[    0.239950] dont support hdmi
+[    0.240357] raoyiming +++LCD_cfg_panel_info
+[    0.240435] display_fb_request,fb_id:0
+[    0.256841] [DISP] Fb_copy_boot_fb,line:1444:
+[    0.256845] no boot_fb0
+[    0.257361] disp_al_manager_apply ouput_type:0
+[    0.257763] [DISP] lcd_clk_config,line:731:
+[    0.257776] disp 0, clk: pll(330000000),clk(330000000),dclk(55000000) dsi_rate(55000000)
+                    clk real:pll(324000000),clk(324000000),dclk(81000000) dsi_rate(150000000)
+[    0.258107] raoyiming +++ LCD_open_flow
+[    0.272681] <0>raoyiming +++ sunxi_lcd_gpio_set_value
+[    0.382658] <0>raoyiming +++ LCD_panel_init
+[    1.252847] [DISP] disp_lcd_gpio_set_value,line:2565:
+[    1.252853] of_get_named_gpio_flags for lcd_gpio_1 failed
+```
+
+
+## 3D prints
 
 https://www.tinkercad.com/things/iB2n0KXmySi
 

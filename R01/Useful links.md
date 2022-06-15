@@ -45,7 +45,7 @@ https://addy-dclxvi.github.io/post/configuring-urxvt/
 - https://www.reddit.com/r/ClockworkPi/new/
 - https://blog.strits.dk/clockworkpi-devterm/
 - https://pspodcasting.net/dan/blog/2018/console_desktop.html#serious
-
+- https://artvsentropy.wordpress.com/2022/01/15/writing-on-the-devterm/
 
 # printer
 

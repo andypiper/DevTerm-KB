@@ -5,7 +5,7 @@ sudo sed -i 's/devel/jammy/g' /etc/apt/sources.list
 ## Remove update notifier
 sudo apt purge update-notifier common
 
-sudo apt purge gimp inkscape freedoom chocolate-doom colord
+sudo apt purge gimp inkscape freedoom chocolate-doom colord motd-news-config gnome-terminal
 
 ## Disable u-boot update for kernel upgrades
 FWIW, /boot/exlinux/extlinux.conf is updated by u-boot-update. It looks like you can turn off automatic updating by adding `U_BOOT_UPDATE=false` to `/etc/default/u-boot`.
@@ -13,7 +13,11 @@ FWIW, /boot/exlinux/extlinux.conf is updated by u-boot-update. It looks like you
 
 ## My packages
   
-sudo apt install -y ripgrep mosh neofetch libfltk1.3-dev libjpeg-dev libpng-dev libxft-dev libxext-dev thonny mu-editor python3 python3-rshell pyboard-rshell micropython zathura fonts-ibm-plex fonts-cabin fonts-noto-color-emoji fonts-noto bsdgames fonts-hack-ttf rxvt-unicode i3blocks gh zip unzip rofi zsh-syntax-highlighting zsh-autosuggestions zsh cruft-ng plocate debhelper devscripts cme x11vnc gpm i3-wm i3blocks fbterm 
+sudo apt install -y 
+ripgrep mosh neofetch libfltk1.3-dev libjpeg-dev libpng-dev libxft-dev libxext-dev thonny mu-editor python3 python3-rshell pyboard-rshell micropython zathura fonts-ibm-plex fonts-cabin fonts-noto-color-emoji fonts-noto bsdgames fonts-hack-ttf rxvt-unicode i3blocks gh zip unzip rofi zsh-syntax-highlighting zsh-autosuggestions zsh cruft-ng plocate debhelper devscripts cme x11vnc gpm i3-wm i3blocks fbterm fbcat nm-applet terminology bat focuswriter ne wordgrinder cargo fonts-mononoki fonts-hermit fonts-firacode fonts-league-mono nethack-console jq httpie
+
+
+terminews rsstail irssi* tinyirc inxi glirc f-irc tty-clock
 
 
 ## devterm stuff
@@ -22,14 +26,13 @@ sudo apt install devterm-fan-temp-daemon-rpi
 
 ### for trs terminal
 
-sudo apt install libfltk1.3-dev libjpeg-dev libpng-dev libxft-dev libxinerama-dev libxext-dev
+- sudo apt install libfltk1.3-dev libjpeg-dev libpng-dev libxft-dev libxinerama-dev libxext-dev
+- git clone https://github.com/sboger/VirtualT-DevTerm.git
+- make
 
-git clone https://github.com/sboger/VirtualT-DevTerm.git
+TODO: package, .desktop file etc
 
-make
-
-
-modify gkrellm and nedit and xterm fonts
+~~modify gkrellm and nedit and xterm fonts~~
 
 
 ## setup swap
@@ -60,6 +63,8 @@ sudo dpkg-reconfigure console-setup
  sudo systemctl enable avahi-daemon.service
   
 
+echo "set sandbox none" > .config/zathura/zathurarc
+
 
   Configure i3 and i3blocks
   
@@ -70,3 +75,8 @@ sudo dpkg-reconfigure console-setup
   
   
   
+## terminology
+
+- https://linoxide.com/terminology-terminal/
+- https://ostechnix.com/terminology-a-best-terminal-emulator-with-lots-of-features/
+- 

@@ -39,4 +39,29 @@ PICO-8 no version for RISC-V
 
 to take screenshot
 
-xwd -root -display :0 | convert xwd:- jpg:- > file.jpg
+`xwd -root -display :0 | convert xwd:- jpg:- > file.jpg`
+
+
+hardware access macros (zsh)
+```
+function temp() {
+	(( temp = $((`cat /sys/class/thermal/thermal_zone0/temp` / 1000)) ))
+	echo $temp C
+}
+
+function fanon() {
+	gpio mode 41 out
+	gpio write 41 1
+}
+
+function fanoff() {
+	gpio mode 41 out
+	gpio write 41 0
+}
+```
+
+
+
+
+look into Julia
+look into Oberon
