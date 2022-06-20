@@ -264,6 +264,77 @@ Default text is large and not very helpful for keeping text files on paper.
 
 
 
+## gpm / console pointer
+
+```
+devterm-R01% sudo apt install gpm
+[sudo] password for cpi:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  gpm
+0 upgraded, 1 newly installed, 0 to remove and 370 not upgraded.
+Need to get 0 B/177 kB of archives.
+After this operation, 496 kB of additional disk space will be used.
+Preconfiguring packages ...
+Selecting previously unselected package gpm.
+(Reading database ... 158816 files and directories currently installed.)
+Preparing to unpack .../gpm_1.20.7-10build1_riscv64.deb ...
+Unpacking gpm (1.20.7-10build1) ...
+Setting up gpm (1.20.7-10build1) ...
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Job for gpm.service failed because the service did not take the steps required by its unit configuration.
+See "systemctl status gpm.service" and "journalctl -xeu gpm.service" for details.
+invoke-rc.d: initscript gpm, action "restart" failed.
+× gpm.service - Console Mouse manager
+     Loaded: loaded (/lib/systemd/system/gpm.service; enabled; vendor preset: enabled)
+     Active: failed (Result: protocol) since Mon 2022-06-20 12:59:02 UTC; 100ms ago
+       Docs: man:gpm(8)
+             man:gpm.conf(5)
+             man:gpm-types(7)
+    Process: 9814 ExecStart=/usr/share/gpm/gpm-systemd-wrapper.sh (code=exited, status=0/SUCCESS)
+        CPU: 30ms
+
+Jun 20 12:59:01 devterm-R01 systemd[1]: Starting Console Mouse manager...
+Jun 20 12:59:01 devterm-R01 /usr/sbin/gpm[9816]: *** info [daemon/startup.c(131)]:
+Jun 20 12:59:01 devterm-R01 /usr/sbin/gpm[9816]: Started gpm successfully. Entered daemon mode.
+Jun 20 12:59:01 devterm-R01 /usr/sbin/gpm[9816]: O0o.oops(): [daemon/old_main.c(58)]:
+Jun 20 12:59:01 devterm-R01 /usr/sbin/gpm[9816]: Could not open /dev/input/mice.
+Jun 20 12:59:02 devterm-R01 systemd[1]: gpm.service: New main PID 9816 does not exist or is a zombie.
+Jun 20 12:59:02 devterm-R01 systemd[1]: gpm.service: Failed with result 'protocol'.
+Jun 20 12:59:02 devterm-R01 systemd[1]: Failed to start Console Mouse manager.
+dpkg: error processing package gpm (--configure):
+ installed gpm package post-installation script subprocess returned error exit status 1
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for install-info (6.8-4build1) ...
+Errors were encountered while processing:
+ gpm
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+devterm-R01%
+```
+
+then... 
+sudo ln -s /dev/input/event4 /dev/input/mice
+vi /etc/gpm.conf
+
+```
+device=/dev/input/mice
+responsiveness=
+repeat_type=none
+type=evdev
+append=''
+sample_rate=
+```
+
+Daemon starts now, but still failing 
+```
+Jun 20 13:12:45 devterm-R01 /usr/sbin/gpm[10992]: Error in read()ing first: Invalid argument
+Jun 20 13:12:45 devterm-R01 /usr/sbin/gpm[10992]: *** err [daemon/getmousedata.c(47)]:
+```
+
+(also, there's no console cursor visible anyway)
+
 ## Addons
 
 ### 3D prints
