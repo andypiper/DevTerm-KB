@@ -1,5 +1,5 @@
 
-## Fix apt sour es to Jammy
+## Fix apt sources to Jammy
 sudo sed -i 's/devel/jammy/g' /etc/apt/sources.list
 
 ## Remove update notifier
@@ -17,7 +17,7 @@ FWIW, /boot/exlinux/extlinux.conf is updated by u-boot-update. It looks like you
 ## My packages
   
 sudo apt install -y 
-ripgrep mosh neofetch libfltk1.3-dev libjpeg-dev libpng-dev libxft-dev libxext-dev thonny mu-editor python3 python3-rshell pyboard-rshell micropython zathura fonts-ibm-plex fonts-cabin fonts-noto-color-emoji fonts-noto bsdgames fonts-hack-ttf rxvt-unicode i3blocks gh zip unzip rofi zsh-syntax-highlighting zsh-autosuggestions zsh cruft-ng plocate debhelper devscripts cme x11vnc gpm i3-wm i3blocks fbterm fbcat nm-applet terminology bat focuswriter ne wordgrinder cargo fonts-mononoki fonts-hermit fonts-firacode fonts-league-mono nethack-console jq httpie
+ripgrep mosh neofetch libfltk1.3-dev libjpeg-dev libpng-dev libxft-dev libxext-dev thonny mu-editor python3 python3-rshell pyboard-rshell micropython zathura fonts-ibm-plex fonts-cabin fonts-noto-color-emoji fonts-noto bsdgames fonts-hack-ttf rxvt-unicode i3blocks gh zip unzip rofi zsh-syntax-highlighting zsh-autosuggestions zsh cruft-ng plocate debhelper devscripts cme x11vnc gpm i3-wm i3blocks fbterm fbcat nm-applet terminology bat focuswriter ne wordgrinder cargo fonts-mononoki fonts-hermit fonts-firacode fonts-league-mono nethack-console jq httpie fbset
 
 
 terminews rsstail irssi* tinyirc inxi glirc f-irc tty-clock

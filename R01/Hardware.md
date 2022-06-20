@@ -1,3 +1,5 @@
+## system output
+
 ```text
 devterm-r01
     description: Computer
@@ -226,8 +228,35 @@ may need udev rule + setuid tools / group?
 
 ## sound
 
+## built-in display
 
-## video out
+/sys/class/video/fbcon
+/sys/class/video/fb0
+
+```
+devterm-R01% fbset -i
+
+mode "480x1280-61"
+    # D: 55.002 MHz, H: 79.254 kHz, V: 60.592 Hz
+    geometry 480 1280 1280 1280 32
+    timings 18181 110 64 2 16 40 10
+    rgba 8/16,8/8,8/0,8/24
+endmode
+
+Frame buffer device information:
+    Name        :
+    Address     : 0xff800000
+    Size        : 4915200
+    Type        : PACKED PIXELS
+    Visual      : TRUECOLOR
+    XPanStep    : 1
+    YPanStep    : 1
+    YWrapStep   : 0
+    LineLength  : 1920
+    Accelerator : No
+```
+
+## video (HDMI) out
 
 Failing.
 
@@ -333,7 +362,12 @@ Jun 20 13:12:45 devterm-R01 /usr/sbin/gpm[10992]: Error in read()ing first: Inva
 Jun 20 13:12:45 devterm-R01 /usr/sbin/gpm[10992]: *** err [daemon/getmousedata.c(47)]:
 ```
 
-(also, there's no console cursor visible anyway)
+(also, there's no [console cursor visible](https://forum.clockworkpi.com/t/ro1-no-software-cursor-displayed-on-fbcon/8659) anyway)
+
+I don't see any cursor-related options in the kernel config file that's in /boot, and simply changing `/sys/class/graphics/fbcon/cursor_blink` to 1 doesn't seem to have an effect for me. 
+
+I had a quick skim through some of the resources that show up on a Google search, and I've seen a (unvalidated) comment that Allwinner SoC doesn't have hardware cursor, I'm not able to confirm that. I've also tried a few other things to no avail so far.
+
 
 ## Addons
 
