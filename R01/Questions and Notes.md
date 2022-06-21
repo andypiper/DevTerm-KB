@@ -84,7 +84,21 @@ look into Oberon
 
 
 
+## Trying out sbcbench
 
+See [this issue](https://github.com/ThomasKaiser/sbc-bench/issues/43) for related conversation
+
+Need to shut down a lot of background stuff to get CPU load below ~10% for bench:
+
+```
+   sudo systemctl stop devterm-audio-patch.service
+   sudo systemctl stop devterm-socat
+   sudo systemctl stop devterm-printer
+   sudo systemctl stop cups
+   sudo systemctl stop unattended-upgrades
+   sudo systemctl stop rtkit-daemon
+   sudo systemctl stop devterm-keyboard
+```
 
 ```
 cpi@devterm-R01:~$ sudo /bin/bash ./sbc-bench.sh -c
