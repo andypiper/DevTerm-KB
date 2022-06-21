@@ -51,23 +51,23 @@ to take screenshot
 hardware access macros (zsh)
 ```
 function battery() {
-	(( chrg = $((`cat /sys/class/power_supply/axp20x-battery/capacity`)) ))
-	echo $chrg%
+    (( chrg = $((`/usr/bin/cat /sys/class/power_supply/axp20x-battery/capacity`)) ))
+    echo $chrg%, `/usr/bin/cat /sys/class/power_supply/axp20x-battery/status`
 }
 
 function cputemp() {
-	(( temp = $((`cat /sys/class/thermal/thermal_zone0/temp` / 1000)) ))
-	echo $temp C
+    (( temp = $((`/usr/bin/cat /sys/class/thermal/thermal_zone0/temp` / 1000)) ))
+    echo $temp C
 }
 
 function fanon() {
-	gpio mode 41 out
-	gpio write 41 1
+    gpio mode 41 out
+    gpio write 41 1
 }
 
 function fanoff() {
-	gpio mode 41 out
-	gpio write 41 0
+    gpio mode 41 out
+    gpio write 41 0
 }
 ```
 
