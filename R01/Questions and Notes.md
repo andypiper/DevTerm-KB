@@ -52,12 +52,12 @@ hardware access macros (zsh)
 ```
 function battery() {
     (( chrg = $((`/usr/bin/cat /sys/class/power_supply/axp20x-battery/capacity`)) ))
-    echo $chrg%, `/usr/bin/cat /sys/class/power_supply/axp20x-battery/status`
+    echo $chrg%, `/usr/bin/cat /sys/class/power_supply/axp20x-battery/status` | sed 's/./\L&/g'
 }
 
 function cputemp() {
     (( temp = $((`/usr/bin/cat /sys/class/thermal/thermal_zone0/temp` / 1000)) ))
-    echo $temp C
+    echo $temp°C
 }
 
 function fanon() {
