@@ -225,6 +225,7 @@ UART on one side of keyboard.
 
 may need udev rule + setuid tools / group?
 
+simplest fix: `chmod +s /usr/bin/gpio`
 
 ## sound
 
