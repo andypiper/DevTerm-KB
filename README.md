@@ -4,7 +4,7 @@
 
 A collection of notes, scripts and other information about the [Clockwork Pi DevTerm](https://www.clockworkpi.com/devterm).
 
-Organised per core module. I currently have an R01 RISC-V module (with an A06 on order)
+Organised per core module. I currently have an R01 RISC-V and a Pi CM4 module (with an A06 on order)
 
 This is not intended to be a replacement for the product wiki, just things I'm learning and doing as I go...
 
